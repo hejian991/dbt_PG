@@ -1,0 +1,17 @@
+dbt_pg:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: ep-delicate-cherry-a1japado-pooler.ap-southeast-1.aws.neon.tech
+      port: 5432
+      user: neondb_owner
+      password: ******************
+      dbname: neondb
+      schema: public
+      threads: 4
+      keepalives_idle: 0
+      connect_timeout: 10
+      retries: 1
+      sslmode: prefer
+
