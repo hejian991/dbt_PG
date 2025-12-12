@@ -30,3 +30,21 @@ models:
           - accepted_values:
               values: ['credit_card', 'coupon', 'bank_transfer', 'gift_card']
 
+  - name: stg_customers_from_source
+    description: "Staging table for customer data sourced from public.raw_customers"
+    columns:
+      - name: customer_id
+        data_type: integer
+        description: "Unique identifier for each customer (renamed from id)"
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        data_type: text
+        description: "Customer's first name"
+
+      - name: last_name
+        data_type: text
+        description: "Customer's last name"
+
